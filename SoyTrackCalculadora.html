@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoyTrack Calculadora Financeira</title>
+  </head>
+<body>
+    <h2>Calculadora Financeira</h2>
+    
+    Número de Silos: <input type="number" id="silos" oninput="calcular()"> <br>
+    
+    
+    Capacidade (ton/silo): <input type="number" id="capacidade" oninput="calcular()">
+    
+    
+    <h3>Resultados:</h3>
+    <div id="resultados"></div>
+</body>
+</html>
+    <script>
+        function calcular() {
+            // Pegar valores
+            var silos = parseInt(document.getElementById('silos').value);
+            var capacidade = parseInt(document.getElementById('capacidade').value);
+                                  
+            
+            // Cálculos
+            var total = silos * capacidade;
+            var perdaSem = total * 0.05;  // 5% sem sensor
+            var perdaCom = total * 0.035; // 3.5% com sensor
+            var economia = perdaSem - perdaCom;
+            var valorEconomizado = economia * 1780; // Preço da Soja: R$1780/ton
+            
+            // Mostrar resultados
+            resultados.innerHTML = `
+                Perda sem sensor: ${(perdaSem.toFixed(2))} ton <br> <br>
+                Perda com sensor: ${(perdaCom.toFixed(2))} ton <br> <br>
+                Economia: ${(economia.toFixed(2))} ton <br> <br>
+                Valor economizado: R$${(valorEconomizado.toFixed(2))}
+            `;
+        }
+        calcular(); // Rodar ao carregar
+    </script>
+</body>
+</html>
