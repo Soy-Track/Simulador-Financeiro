@@ -6,23 +6,28 @@
     <title>SoyTrack Calculadora Financeira</title>
   </head>
 <body>
-    <h2>Calculadora Financeira</h2>
+    <h2>Simulador Financeiro</h2>
     
-    Número de Silos: <input type="number" id="silos" oninput="calcular()"> <br>
-    
-    
-    Capacidade (ton/silo): <input type="number" id="capacidade" oninput="calcular()">
+    Número de Silos: <input type="number" id="ipt_silos"> <br> <br>
     
     
-    <h3>Resultados:</h3>
+    Capacidade (ton/silo): <input type="number" id="ipt_capacidade"> <br><br>
+    <button onclick = 'calcular()'>Calcular</button> <br>    
+    
     <div id="resultados"></div>
 </body>
 </html>
     <script>
         function calcular() {
-            // Pegar valores
-            var silos = parseInt(document.getElementById('silos').value);
-            var capacidade = parseInt(document.getElementById('capacidade').value);
+            if (ipt_silos.value < 1) {
+                alert('Insira o número de silos')
+            } else if(ipt_capacidade.value < 1){
+            alert('Insira a capacidade do(s) silo(s)')
+        }
+            else{
+                // Pegar valores
+            var silos = parseInt(document.getElementById('ipt_silos').value);
+            var capacidade = parseInt(document.getElementById('ipt_capacidade').value);
                                   
             
             // Cálculos
@@ -33,14 +38,17 @@
             var valorEconomizado = economia * 1780; // Preço da Soja: R$1780/ton
             
             // Mostrar resultados
-            resultados.innerHTML = `
+            resultados.innerHTML = `Resultados: <br> <br>
                 Perda sem sensor: ${(perdaSem.toFixed(2))} ton <br> <br>
                 Perda com sensor: ${(perdaCom.toFixed(2))} ton <br> <br>
                 Economia: ${(economia.toFixed(2))} ton <br> <br>
                 Valor economizado: R$${(valorEconomizado.toFixed(2))}
             `;
-        }
-        calcular(); // Rodar ao carregar
+            }
+            
+            }
+          
+                
     </script>
 </body>
 </html>
