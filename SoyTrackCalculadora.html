@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SoyTrack Calculadora Financeira</title>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SoyTrack Calculadora Financeira</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f4fdf4;
+            color: #2e5e2e;
+            padding: 40px;
+          }
+      
+          h2 {
+            color: #2e5e2e;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+      
+          input[type="number"] {
+            padding: 8px;
+            margin: 10px 0;
+            border: 2px solid #a3d9a5;
+            border-radius: 5px;
+            width: 200px;
+          }
+      
+          button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+      
+          button:hover {
+            background-color: #45a049;
+          }
+      
+          #resultados {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            line-height: 1.6;
+          }
+        </style>
+      </head>
 <body>
     <h2>Simulador Financeiro</h2>
     
@@ -12,7 +59,7 @@
     
     
     Capacidade (ton/silo): <input type="number" id="ipt_capacidade"> <br><br>
-    <button onclick = 'calcular()'>Calcular</button> <br>    
+    <button onclick = 'calcular()'>Calcular</button> <br> <br>    
     
     <div id="resultados"></div>
 </body>
